@@ -1,0 +1,30 @@
+name: Daily Email
+
+on:
+  schedule:
+    - cron: '30 4 * * *' # Runs every day at 10:00 AM IST (4:30 AM UTC)
+
+jobs:
+  send-email:
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+        
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.x'
+
+      - name: Install dependencies
+        run: |
+          pip install -r requirements.txt
+
+      - name: Send email
+        env:
+          GMAIL_USERNAME: ${{ secrets.GMAIL_USERNAME }}
+          GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
+          TO_EMAIL: recipient_email@example.com
+        run: |
+          python send_email.py

@@ -25,6 +25,6 @@ jobs:
         env:
           GMAIL_USERNAME: ${{ secrets.GMAIL_USERNAME }}
           GMAIL_PASSWORD: ${{ secrets.GMAIL_PASSWORD }}
-          TO_EMAIL: recipient_email@example.com
+          TO_EMAIL: contact@shathish.me
         run: |
           python send_email.py

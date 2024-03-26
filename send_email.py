@@ -10,7 +10,7 @@ def send_email():
     
     # Email content
     subject = "Daily Email Automation"
-    body = "<p>Have a great shathish</p>"
+    body = "<p>Good Morning, Have a great day shathish !!</p>"
 
     # Set up SMTP server
     smtp_server = "smtp.gmail.com"

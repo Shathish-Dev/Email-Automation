@@ -6,7 +6,7 @@ import os
 def send_email():
     # Set up sender and recipient email addresses
     sender_email = "shathishbackup@google.com"
-    to_email = "contact@shathish.me"
+    to_email = "shathish.irctc@shathish.me"
     
     # Email content
     subject = "Daily Email Automation"

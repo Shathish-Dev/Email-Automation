@@ -5,12 +5,12 @@ import os
 
 def send_email():
     # Set up sender and recipient email addresses
-    sender_email = "shathishbackup@gmail.com"
+    sender_email = "shathishbackup@google.com"
     to_email = "contact@shathish.me"
     
     # Email content
-    subject = "Daily Email"
-    body = "<p>Your email content here</p>"
+    subject = "Daily Email Automation"
+    body = "<p>Have a great shathish</p>"
 
     # Set up SMTP server
     smtp_server = "smtp.gmail.com"

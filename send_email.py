@@ -5,8 +5,8 @@ import os
 
 def send_email():
     # Set up sender and recipient email addresses
-    sender_email = os.environ.get('GMAIL_SENDER')
-    to_email = os.environ.get('GMAIL_RECEVIER')
+    sender_email = os.environ.get('SENDER_EMAIL')
+    to_email = os.environ.get('RECIPIENT_EMAIL')
     
     # Email content
     subject = "Daily Email Automation"

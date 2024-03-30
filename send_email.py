@@ -4,8 +4,9 @@ from email.mime.text import MIMEText
 import os
 
 def send_email():
-    # Set up sender and recipient email addresses
+    # Retrieve sender and recipient email addresses from environment variables
     sender_email = os.environ.get('SENDER_EMAIL')
+    sender_name = "Shathish Bot"  # Set sender name
     to_email = os.environ.get('RECIPIENT_EMAIL')
     
     # Email content
@@ -22,7 +23,7 @@ def send_email():
 
     # Create message container
     msg = MIMEMultipart()
-    msg['From'] = sender_email
+    msg['From'] = f"{sender_name} <{sender_email}>"  # Include sender name
     msg['To'] = to_email
     msg['Subject'] = subject
 

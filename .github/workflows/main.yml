@@ -1,0 +1,24 @@
+name: Update requirements.txt with Current Date
+
+on:
+  schedule:
+    - cron: '0 0 * * *'  # Runs at 12:00 AM UTC every day
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Update text file with current date
+      run: |
+       echo "Current Date: $(date +'%Y-%m-%d')" > requirements.txt
+        
+     
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add requirements.txt
+        git commit -m "Update requirements.txt with current date"
+        git push

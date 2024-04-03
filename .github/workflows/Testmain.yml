@@ -1,0 +1,25 @@
+name: Update requirements.txt with Current Date
+
+on:
+  issue_comment:
+    types: [created]
+    pattern: "trigger workflow"
+
+jobs:
+  update-file:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v2
+      
+    - name: Update text file with current date
+      run: |
+        echo "Current Date: $(date +'%Y-%m-%d')" > requirements.txt
+        
+        # Commit and push changes
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add requirements.txt
+        git commit -m "Update requirements.txt with current date"
+        git push

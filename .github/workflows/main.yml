@@ -1,8 +1,8 @@
-name: Update requirements.txt with Current Date
+name: Update requirements.txt
 
 on:
   schedule:
-    - cron: '0 0 * * *'  # Runs at 12:00 AM UTC every day
+    - cron: '59 23 * * *'  # Runs at 12:00 AM UTC every day
 
 jobs:
   update-file:
